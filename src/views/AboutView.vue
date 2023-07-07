@@ -1,7 +1,7 @@
 <script setup>
-import axios from 'axios'
-axios('http://127.0.0.1:5173/users').then(res=>{
-  console.log(11)
+import http from '../http.js'
+http.$get('users').then(res=>{
+  console.log(res)
 })
 </script>
 
