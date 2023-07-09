@@ -1,23 +1,21 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import AboutView from './views/AboutView.vue';
+import HomeView from './views/HomeView.vue';
+import { useMainStore } from '@/stores/main.js'
+const main = useMainStore()
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+     <AboutView></AboutView>
+     <HomeView></HomeView>
     </div>
-  </header>
+    <button @click="main.reset()">重置</button>
 
-  <RouterView />
+
 </template>
 
 <style scoped>
